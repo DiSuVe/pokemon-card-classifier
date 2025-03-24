@@ -5,7 +5,7 @@
 
 ---
 
-## 📌 Project Overview  
+## Project Overview  
 
 This was my final project for my Deep Learning class and consists of a **deep learning-based classification system** that can automatically identify the **type** of a Pokémon Trading Card Game (PTCG) card using **computer vision techniques**. It is based around two main components:  
 
@@ -16,11 +16,11 @@ This model provides a quick way to recognize Pokémon card types using **transfe
 
 ---
 
-## 📂 Dataset Source & Preprocessing  
+## Dataset Source & Preprocessing  
 
 ### Dataset Source  
 The dataset used in this project was obtained from **Hugging Face**:  
-🔗 **[TheFusion21/PokemonCards Dataset](https://huggingface.co/datasets/TheFusion21/PokemonCards)**  
+**[TheFusion21/PokemonCards Dataset](https://huggingface.co/datasets/TheFusion21/PokemonCards)**  
 
 This dataset contains **13,139 Pokémon cards** from **1999 to 2022** in English, with high-resolution images and metadata such as `id`, `name`, `caption`, `hp`, and `set name`.
 
@@ -58,7 +58,7 @@ The dataset required cleaning and preprocessing before training. The following s
 
 ---
 
-## 🧠 Model Training (Classification Component)  
+## Model Training (Classification Component)  
 
 ### Architecture
 - **Base Model:** `ResNet18` from `torchvision.models`
@@ -89,9 +89,9 @@ The dataset required cleaning and preprocessing before training. The following s
 
 ---
 
-## 🎥 Real-Time Detection System (Live Feed Component)  
+## Real-Time Detection System (Live Feed Component)  
 
-### ⚠️ Limitations
+### Limitations
 This is a **raw OpenCV implementation**. It can:  
 ✅ Detect **one card at a time**.  
 ✅ Only classify **vertical cards** under **ideal lighting conditions**.  
@@ -99,20 +99,20 @@ This is a **raw OpenCV implementation**. It can:
 
 ---
 
-### 🛠️ How It Works
+### How It Works
 1. **Video Capture:** Reads frames from a **live webcam/IP stream**.
 2. **Edge Detection:** Uses OpenCV’s `cv2.Canny` to find contours.
 3. **Card Detection:** Identifies the **largest rectangular contour** with **4 corners**.
 4. **Classification:** Extracts and preprocesses the detected card, feeds it into **ResNet18**, and predicts its type.
 5. **Overlay Display:** Draws a **bounding box** around the card and overlays **type name + icon**.
 
-### 📈 Performance
+### Performance
 - Best results under **cold natural light (10:00 - 11:30 AM)**.
 - Worked best with **black backgrounds**.
 - Successfully classified **90% of test cards** from **Paradox Rift (2023) & Obsidian Flames (2024)**.
 - Struggled with **rotated cards** and **low-light environments**.
 
-## 📜 References
+## References
 - Dataset: TheFusion21/PokemonCards - Hugging Face
   https://huggingface.co/datasets/TheFusion21/PokemonCards
 - OpenCV Docs: https://opencv.org
@@ -125,11 +125,11 @@ This is a **raw OpenCV implementation**. It can:
 
 ---
 
-## 🔗 Additional Resources
-📺 **Testing Video 1 (Early Attempt):**
+## Additional Resources
+**Testing Video 1 (Early Attempt):**
 https://youtu.be/_wima84K0NU  
 
-📺 **Testing Video 2 (Latest Attempt):**
+**Testing Video 2 (Latest Attempt):**
 https://youtu.be/StDAPjqSBLo  
 
 ---
